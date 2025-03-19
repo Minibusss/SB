@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.5s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+
+header{
+    width: 100%;
+    background-color:rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+nav ul li ul li {
+    margin: 0;
+}
+nav ul li ul li a {
+    padding: 10px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+nav ul li ul li a:hover {
+    background-color: #666;
+}
+
+/* Sections */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+section:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.sec1, .sec2, .sec3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+.sec1:hover, .sec2:hover, .sec3:hover {
+    transform: scale(1.02);
+}
+.text {
+    flex: 1;
+    padding: 20px;
+}
+.text h1 {
+    font-size: 24px;
+    color: #333;
+}
+.text p {
+    font-size: 16px;
+    color: #666;
+}
+.right1, .right2, .right3 {
+    flex: 1;
+    text-align: center;
+}
+.menu-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.menu-image:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sec1, .sec2, .sec3 {
+        flex-direction: column;
+        text-align: center;
+    }
+}
