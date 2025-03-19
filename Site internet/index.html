@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatble" content="IE=edge">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <title>Schrödinger Box</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+    <!--Menu Nico-->
+<body>
+
+    <header>
+        <div class="logo">
+            <p><span>Schrödinger</span> Box</p>    <!-- <span></span> = <div> mais pour une ranger -->
+        </div>
+        <ul class="menu">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#1">Présentation du projet</a></li>
+            <li><a href="#2">Fonctionalitées</a></li>
+            <li><a href="#3">problèmes rencontrés</a></li>
+            <li><a href="#4">choix des composants</a></li>
+            <li><a href="#5">Progression</a></li>
+        </ul>
+    </header>
+    
+    <!--Menu Elena-->
+    <nav>
+        <ul>
+            <li class="menu-deroulant">
+            <a href="#">Services</a>
+            <ul class="sous-menu">
+                <li><a href="#">Graphisme</a></li>
+                <li><a href="#">Web & App</a></li>
+                <li><a href="#">Marketing</a></li>
+            </ul>
+            </li>
+            <li class="menu-deroulant">
+                <a href="#">Réalisations</a>
+                <ul class="sous-menu">
+                    <li><a href="#">SpaceX</a></li>
+                    <li><a href="#">Codeur.com</a></li>
+                </ul>
+            </li>
+            <li><a href="#">A propos</a></li>
+            <li><a href="#">Contactez-nous</a></li>
+        </ul>
+     </nav>
+    
+    <!-- Page scores -->
+    <section id="database-data">
+        <h2>Données de la base</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Valeur</th>
+                </tr>
+            </thead>
+            <tbody id="data-table">
+            </tbody>
+        </table>
+    </section>
+    
+    <script>
+        async function fetchData() {
+            const response = await fetch('/data');
+            const data = await response.json();
+            const tableBody = document.getElementById('data-table');
+            tableBody.innerHTML = '';
+    
+            data.forEach(row => {
+                let tr = document.createElement('tr');
+                row.forEach(cell => {
+                    let td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script> 
+
+    <!-- Bloc de text -->
+
+    <section id="bloc">
+
+        <div class="sec2" id="1">
+            <div class="Text">
+                <h1>Présentation général</h1>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</p>
+    <button ><a href="file:///D:/Travail/Scrapping/Shrodingerbox/indexj.html"><span>C  o  m  m  a  n  d  e  r </span>M  a  i  n  t  e  n  a  n  t</a></button>
+            </div>
+            <div class="image">
+                <img src="Ds4.jpeg" alt="Image du produit">
+            </div>
+        </div>
+
+
+        <div class="sec1" id="2">
+            <div class="Text">
+                <h1>Présentation général</h1>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</p>
+    <button ><a href="file:///D:/Travail/Scrapping/Shrodingerbox/indexj.html"><span>C  o  m  m  a  n  d  e  r </span>M  a  i  n  t  e  n  a  n  t</a></button>
+            </div>
+            <div class="image">
+                <img src="Ds2.jpg" alt="Image du produit">
+            </div>
+        </div>
+
+</body>
+</html>

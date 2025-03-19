@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 500 ;
+    color: rgb(52, 215, 63);
+}
+.logo span {
+    color: rgb(11, 156, 3);
+}
+
+
+body {
+    position: relative;
+}
+
+html {
+    scroll-behavior:smooth;
+    font-size: 62.5%;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    padding: 5% ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    background-color: rgba(255, 255, 255, 0.914);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#home { 
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    height: calc(100vh - 50px);
+    justify-content: space-between;
+}
+
+#home .left1 {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home .left1 h4 {
+    font-size: 20px;
+    color: rgb(52, 215, 63);
+}
+
+#home .left1 h1 {
+    font-size: 40px;
+    color: rgba(0,0,0);
+}
+
+#home .left1 p {
+    font-size: 12px;
+    color: #999;
+}
+
+#home .left1 button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#home .left1 button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#home .left1 button a span {
+    margin-right: 8px;
+}
+
+#home .left1 button::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(52, 215, 63);
+    border-radius: 10px;
+
+}
+
+#home .left1 button:hover {
+    letter-spacing: 2px;
+}
+
+#home .right1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .right1 img {
+    width: 100%;
+    animation: animate 2s linear;
+    transition: 1s;
+}
+
+
+.menu {
+    display:flex;
+}
+
+.menu li {
+    margin: 0 15px;
+    list-style: none;
+}
+
+.menu li a {
+    font-size: 20px;
+    text-decoration: 0;
+    color: #999;
+    position: relative;
+}
+
+.menu li a::before {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 2px;
+    border-radius: 15%;
+    background-color: rgb(11, 156, 3);
+    transition: 0.5s;
+}
+
+.menu li a:hover::before {
+    width: 100%;
+} 
+
+.menu li a::after {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    content: "";
+    width: 0%;
+    height: 2px;
+    border-radius: 15%;
+    background-color: rgb(11, 156, 3);
+    transition: 0.5s;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+} 
+
+.menu li a:hover {
+    color: #262424;
+}
+
+
+@keyframes animate {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+.sec1 { 
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    height: calc(100vh - 50px);
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+
+.sec1 .Text {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec1 .Text h4 {
+    font-size: 20px;
+    color: rgb(52, 215, 63);
+}
+
+.sec1 .Text h1 {
+    font-size: 40px;
+    color: rgba(0,0,0);
+}
+
+.sec1 .Text p {
+    font-size: 12px;
+    color: #999;
+}
+
+.sec1 .Text button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.sec1 .Text button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sec1 .Text button a span {
+    margin-right: 8px;
+}
+
+.sec1 .Text button::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(52, 215, 63);
+    border-radius: 10px;
+
+}
+
+.sec1 .Text button:hover {
+    letter-spacing: 2px;
+}
+
+.sec1 .image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec1 .image img {
+    width: 100%;
+    animation: animate 2s linear;
+    transition: 1s;
+}
+
+
+
+.sec2 { 
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    height: calc(100vh - 50px);
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+}
+
+
+.sec2 .Text {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec2 .Text h4 {
+    font-size: 20px;
+    color: rgb(52, 215, 63);
+}
+
+.sec2 .Text h1 {
+    font-size: 40px;
+    color: rgba(0,0,0);
+}
+
+.sec2 .Text p {
+    font-size: 12px;
+    color: #999;
+}
+
+.sec2 .Text button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.sec2 .Text button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sec2 .Text button a span {
+    margin-right: 8px;
+}
+
+.sec2 .Text button::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(52, 215, 63);
+    border-radius: 10px;
+
+}
+
+.sec2 .Text button:hover {
+    letter-spacing: 2px;
+}
+
+.sec2 .image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec2 .image img {
+    width: 100%;
+    animation: animate 2s linear;
+    transition: 1s;
+}

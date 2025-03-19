@@ -1,0 +1,133 @@
+:root{
+    --hauteur-menu: 60px;
+  }
+
+/*Pour tous les éléments*/
+  * {
+    margin: 0px;
+    padding: 0px;
+    font-family: Montserrat, sans-serif; /*Police d'écriture*/
+  }
+
+/*Pour le menu de navigation (contient toutes les listes)*/
+  nav {
+    width: 100%;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+  }
+
+/*Pour l'élément ul après nav*/
+  nav > ul {
+    display: flex;
+    text-align: center;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.3);
+    height: var(--hauteur-menu);
+  }
+
+/*Pour retirer toutes les décorations de l'élément ul dans nav*/
+  nav > ul {
+    list-style-type: none;
+  }
+
+/*Pour les éléments du menu principal ul*/
+  nav > ul > li {
+    background-color: white;
+    position: relative;
+    height: 100%;
+    flex: 1;
+  }
+
+/*Pour les éléments a du menu principal ul*/
+  nav > ul > li > a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+/*Pour retirer les décorations des liens dans les listes*/
+  li > a {
+    text-decoration: none;
+    color: black;
+  }
+
+/*Pour les éléments ayant la classe menu déroulant (après le texte)*/
+  .menu-deroulant > a:after {
+    content: ">";
+    font-size: 15px;
+    margin-left: 7px;
+    display: inline-block; /*Pour permettre d'animer ensuite*/
+  }
+
+  .sous-menu {
+    margin-top: var(--hauteur-menu); /*Pour que le sous menu se place sous cette marge*/
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    border-radius: 2px; /*Pour arrondir les bords*/
+    /*Pour que les éléments ne dépassent pas*/
+    overflow: hidden;
+    max-height: 0; 
+  }
+
+/*Pour les liens cliquables à l'intérieur des listes du sous-menu*/
+  .sous-menu > li > a {
+    height: 50px;
+    padding-left: 20px;
+    width: 100%;
+    /*Pour aligner les éléments verticalement*/
+    align-items: center;
+    display: flex;
+  }
+
+/*Animation du menu*/
+  nav > ul > li:hover > a {
+    color: green;
+  }
+
+  .sous-menu > li:hover {
+    background-color: blue;
+  }
+
+  .sous-menu > li:hover >a {
+    color: white;
+  }
+
+/*Donner plus de style au menu*/
+  @keyframes rotationFleche {
+    0%{
+        transform: rotate(0deg); 
+    }
+    50%{
+        transform: rotate(45deg)
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+  }
+
+/*Attribuer l'animation aux éléments du menu déroulant, lorsqu'on le survole, après le texte*/
+  .menu-deroulant:hover > a:after {
+    animation: rotationFleche 0.2s linear forwards; /*Méthode d'apparition : linear ; forwards pour qu'elle reste à son état*/
+  }
+
+/*Faire apparaitre le sous-menu*/
+  @keyframes apparitionSousMenu {
+    0%{
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0);
+        border-top: 3px solid green;
+    }
+    30%{
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+    }
+    100%{
+        max-height: 50em;
+        border-top: 3px solid green;
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+    }
+  }
+
+  .menu-deroulant:hover > .sous-menu {
+    animation: apparitionSousMenu 1s forwards; 
+  }
